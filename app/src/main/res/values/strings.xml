@@ -4,4 +4,5 @@
     <string name="boton_verdadero">Verdadero</string>
     <string name="boton_falso">Falso</string>
     <string name="boton_siguiente">Siguiente</string>
+    <string name="boton_atras">Atras</string>
 </resources>

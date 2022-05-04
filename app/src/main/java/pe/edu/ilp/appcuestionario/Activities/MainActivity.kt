@@ -44,11 +44,25 @@ class MainActivity : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.btnSiguiente)
         btnNext.setOnClickListener{
-            posicionActual ++
-            mostrarPreguntas()
+            try{
+                posicionActual ++
+                mostrarPreguntas()
+            } catch (e: Exception) {
+                Toast.makeText(this,"No existe mas preguntas",Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
+        val btnAtras = findViewById<Button>(R.id.btn_atras)
+        btnAtras.setOnClickListener{
+            try{
+                posicionActual --
+                mostrarPreguntas()
+            } catch (e: Exception) {
+                Toast.makeText(this,"No existe mas preguntas Atras",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
     fun cargarPreguntas() {
         preguntas.add(Pregunta("Caracas es la capital de Venezuela",true))
         preguntas.add(Pregunta("Piura es un departamento que pertenece a Ecuador", false))
@@ -62,3 +76,40 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+
+
+
+                                      /*___     -._
+                                        `-. """--._ `-.
+                                           `.      "-. `.
+                             _____           `.       `. \
+                            `-.   """---.._    \        `.\
+                               `-.         "-.  \         `\
+                                  `.          `-.\          \_.-""""""""--._
+                                    `.           `                          "-.
+                                      `.                                       `.    __....-------...
+                            --..._      \                                       `--"""""""""""---..._
+                            __...._"_-.. \                       _,                             _..-""
+                            `-.      """--`           /       ,-'/|     ,                   _.-"
+                               `-.                 , /|     ,'  / |   ,'|    ,|        _..-"
+                                  `.              /|| |    /   / |  ,'  |  ,' /        ----"""""""""_`-
+                                    `.            ( \  \      |  | /   | ,'  //                 _.-"
+                                      `.        .'-\/'""\ |  '  | /  .-/'"`\' //            _.-"
+                                /'`.____`-.  ,'"\  ''''?-.V`.   |/ .'..-P''''  /"`.     _.-"
+                               '(   `.-._""  ||(?|    /'   >.\  ' /.<   `\    |P)||_..-"___.....---
+                                 `.   `. "-._ \ ('   |     `8      8'     |   `) /"""""    _".""
+                                   `.   `.   `.`.b|   `.__            __.'   |d.'  __...--""
+                                     `.   `.   ".`-  .---      ,-.     ---.  -'.-""
+                                       `.   `.   ""|      -._      _.-      |""
+                                         `.  .-"`.  `.       `""""'       ,'
+                                           `/     `.. ""--..__    __..--""
+                                            `.      /7.--|    """"    |--.__
+                                              ..--"| (  /'            `\  ` ""--..
+                                           .-"      \\  |""--.    .--""|          "-.
+                                          <.         \\  `.    -.    ,'       ,'     >
+                                         (P'`.        `%,  `.      ,'        /,' .-"'?)
+                                         P    `. \      `%,  `.  ,'         /' .'     \
+                                        | --"  _\||       `%,  `'          /.-'   .    )
+                                        |       `-.""--..   `%..--"""\\"--.'       "-  |
+                             _Marco_     \          `.  .--"""  "\.\.\ \\.'       )     |*/
