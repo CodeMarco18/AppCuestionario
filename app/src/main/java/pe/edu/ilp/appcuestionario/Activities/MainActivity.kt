@@ -13,14 +13,26 @@ class MainActivity : AppCompatActivity() {
     var preguntas = ArrayList<Pregunta>()
     var posicionActual = 0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //Este método añade preguntas a la lista
-        cargarPreguntas()
+        //cargarPreguntas()
         //Este método muestra las preguntas al usuario
-        mostrarPreguntas()
+        //mostrarPreguntas()
+
+        //mostrar numeros del 1 al 50
+        //numeros()
+
+        //factorial
+        //factorial()
+
+        //Funcion area del triangulo
+        //var trianguloValores = triangulo(20,50)
+        //println("El area del triangulo es : $trianguloValores")
+
 
         val btnVerdad = findViewById<android.view.View>(R.id.btnVerdadero)
         btnVerdad.setOnClickListener{
@@ -63,6 +75,33 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
+
+    /*-------------------------------------Ejercicios-----------------------------------------*/
+
+    fun numeros(){
+        for (i in 50 downTo 1 step 2){
+            println("numeros: $i")
+        }
+    }
+    fun factorial() {
+
+        val num = 10
+        var factorial: Long = 1
+        for (i in 1..num) {
+            factorial *= i.toLong()
+        }
+        println("Factorial del numero es $num = $factorial")
+    }
+
+    fun triangulo(b:Int,h:Int):Int{
+        return (b*h)/2;
+    }
+
+
+
+    /*-------------------------------------Proyecto cuestionario-----------------------------------------*/
     fun cargarPreguntas() {
         preguntas.add(Pregunta("Caracas es la capital de Venezuela",true))
         preguntas.add(Pregunta("Piura es un departamento que pertenece a Ecuador", false))
